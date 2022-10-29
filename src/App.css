@@ -1,38 +1,190 @@
-.App {
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+
+:root {
+  --pr-color: #c23564;
+  --se-color: #0075ff;
+  --te-color: #ffcadc;
+}
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Josefin Sans;
+  
+}
+body {
+/*     color: #fff; */
   text-align: center;
+  background: #c23564;
+  font-size: 20px;
+  color: #444;
+  
+}
+.main {
+  margin: auto;
+  margin-top: 60px;
+  max-width: 720px;
+  height: calc(100vh - 120px);
+  background: #fff;
+  padding: 50px;
+  border-radius: 15px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+nav {
+  margin-bottom: 40px
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+nav ul {
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+}
+nav ul li {
+  list-style: none;
+  border-bottom: 5px solid #fff;
+  opacity: 0.8;
+}
+
+nav ul li.active {
+/*     background: #c23564; */
+  transition: all 0.2s ease;
+  border-bottom: 3px solid var(--pr-color);
+  transition: all 0.4s ease;
+  opacity: 1
+}
+nav ul a {
+  font-size: 26px;
+  color: var(--pr-color);
+  text-decoration: none;
+  display: flex;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  
+  padding: 10px;
+  border-radius: 3px;
+}
+nav ul a:hover{
+  background: #f7e8ed;
+  transition: all 0.4s ease;
 }
 
-.App-link {
-  color: #61dafb;
+nav svg {
+  margin-right: 10px;
+  line-height: 25px;
+  top: 10px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+form {
+  margin-bottom: 40px;
+}
+
+.addTodo {
+  font-size: 20px;
+  width: calc(100% - 110px);
+  padding: 10px;
+  border: none;
+  border-bottom: 2px solid var(--pr-color);
+}
+
+
+.addTodoBtn {
+  width: 90px;
+  margin-left: 20px;
+  font-size: 20px;
+  padding: 11px;
+  color: #fff;
+  background: var(--pr-color);
+  border: none;
+  cursor: pointer;
+  border-radius: 3px;
+}
+.addTodoBtn:hover {
+  background: var(--se-color);
+  border: none;
+  transition: all 0.3s ease;
+}
+.todoList {
+/*     border: 1px solid; */
+  padding: 5px;
+  max-height: 335px;
+  overflow-y: auto;
+}
+.todoItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  padding:  15px 5px 15px 15px;
+  box-shadow: 1px 2px 8px -3px #888;
+}
+.todoItem:hover {
+  box-shadow: 3px 5px 8px 1px #888;
+  transition: all 0.5s ease;
+}
+
+.todoItem .completeTg {
+  zoom: 2.4;
+}
+.todoItem .workText {
+  width: 380px;
+  text-align: justify;
+  line-height: 25px;
+  font-size: 23px;
+}
+.todoItem button {
+  width: 60px;
+  font-size: 20px;
+  cursor: pointer;
+  height: 35px;
+  background: var(--se-color);
+  border: none;
+  color: #fff;
+  border-radius: 3px;
+}
+.todoItem button:hover {
+  background: var(--pr-color);
+  transition: all 0.4s ease;
+}
+.todoItem .delBtn {
+  width: 45px;
+  display: flex;
+  align-items: center;
+  background: none;
+}
+.todoItem .delBtn:hover {
+  background: none;
+}
+.todoItem .delBtn:hover svg {
+  color: var(--pr-color);
+  background: none;
+  transition: all 0.4s ease;
+}
+.todoItem button svg {
+  font-size: 40px;
+  color: red;
+}
+
+.editTodo {
+  width: 380px;
+  font-size: 20px;
+  padding: 10px;
+  border: none;
+  border-bottom: 2px solid var(--pr-color);
+}
+
+.info h2 {
+  font-weight: 500;
+  color: var(--se-color);
+  margin-bottom: 40px
+}
+
+.info li {
+  list-style: none;
+  text-align: left;
+  line-height: 60px;
+  font-size: 25px;
+}
+
+.hdsd img {
+  display: block;
+  width: 60%;
+  margin: auto;
 }
